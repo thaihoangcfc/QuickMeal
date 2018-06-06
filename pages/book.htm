@@ -1,0 +1,125 @@
+    <div class="row" style="text-align: left">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+           <div class="col-md-4">
+             <img src="images/restaurants/1.png" alt="restaurant_image"/>
+           </div>
+           <div class="col-md-8">
+             <div class="row">
+               <h1>{{name}}</h1>
+             </div>
+             <br/>
+             <div class="row">
+               <p>{{location}}</p>
+             </div>
+             <div class="row">
+               <p>{{type}}</p>
+             </div>
+             <div class="row">
+               <p><span id="status"></span> | Open Hours: {{open}}:00 - {{close}}:00</p>
+             </div>
+           </div>
+         </div>
+       </div>
+      </div>
+      
+      <form data-ng-submit="myForm.$valid && submit()" novalidate="novalidate" name="myForm" method="post">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="row">
+                <h4>1. Please select booking details</h4>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>Select date</h5>
+                  <select class="form-control" name="date" id="date">
+                    
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <h5>Select number of guests</h5>
+                  <select class="form-control" name="guest-number" id="guest-number">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+              </div>
+
+              <br/>
+
+              <div class="row">
+                <h5>Pick a time</h5>
+                <input type="hidden" name="time" value="" id="time" required/>
+                <div class="panel panel-default" style="background-color: #f9fafb">
+                  <div class="panel-body" id="booking-time">
+                  </div>
+                </div>
+              </div>
+
+              <br/>
+
+              <div class="row">
+                <h4>2. Please enter your details</h4>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <h5><label for="fname">First Name</label></h5>
+                  <input type="text" class="form-control" name="fname" id="fname" data-ng-pattern="/^[a-zA-Z\s]*$/" data-ng-model="fname" data-ng-model-options="{ updateOn: 'blur' }" placeholder="Hoang" required/><br/>
+                  <span style="color:red" data-ng-show="myForm.fname.$dirty || myForm.fname.$touched">
+                    <span data-ng-show="myForm.fname.$error.required">First Name is required</span>
+                    <span data-ng-show="myForm.fname.$error.pattern">First Name can only contain letter</span>
+                  </span>
+                </div>
+                <div class="col-md-6">
+                  <h5><label for="lname">Last Name</label></h5>
+                  <input type="text" class="form-control" name="lname" id="lname" data-ng-pattern="/^[a-zA-Z\s]*$/" data-ng-model="lname" data-ng-model-options="{ updateOn: 'blur' }" placeholder="Nguyen" required/><br/>
+                  <span style="color:red" data-ng-show="myForm.lname.$dirty || myForm.lname.$touched">
+                    <span data-ng-show="myForm.lname.$error.required">Last Name is required</span>
+                    <span data-ng-show="myForm.fname.$error.pattern">Last Name can only contain letter</span>
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <h5><label for="email">Email</label></h5>
+                  <input type="email" class="form-control" name="email" id="email" data-ng-model="email" data-ng-model-options="{ updateOn: 'blur' }" placeholder="e.g. hoang.nguyen@swin.com" required/><br/>
+                  <span style="color:red" data-ng-show="myForm.email.$dirty || myForm.email.$touched">
+                    <span data-ng-show="myForm.email.$error.required">Email is required</span>
+                    <span data-ng-show="myForm.email.$error.email">Invalid email address</span>
+                  </span>
+                </div>
+                <div class="col-md-6">
+                  <h5><label for="mobile">Mobile Number</label></h5>
+                  <input type="text" class="form-control" name="mobile" id="mobile" data-ng-pattern="/^[04]{2}(\d{8})$/" data-ng-model="user.mobile" data-ng-model-options="{ updateOn: 'blur' }" placeholder="e.g. 0429999999"/><br/>
+                  <span style="color:red" data-ng-show="myForm.mobile.$dirty || myForm.mobile.$touched">
+                    <span data-ng-show="myForm.mobile.$error.pattern">Mobile number must start with 04 and be a 10-digit number</span>
+                  </span>
+                </div>
+              </div>
+              <br/>
+              <div class="row">
+                <p>By sending the booking request, you agree to QuickMeal's Terms and Conditions</p>
+                <button type="submit" data-ng-disabled="myForm.$invalid" class="btn btn-info btn-lg" data-toggle="modal" data-target="#form-notification" data-ng-click="submitform()">Confirm Booking</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      
+      <div class="modal fade" id="form-notification" role="dialog" style="text-align: center">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer" style="text-align: center">
+              <p>Click anywhere to return to the home page</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>

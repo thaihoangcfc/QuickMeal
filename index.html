@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+  
+<head>
+  <title>Template that uses Bootstrap</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="framework//css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- HTML5 shiv and respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+  
+<body style="text-align: center; font-family: Roboto" data-ng-controller="myCtrl">
+  <div class="container" data-ng-init="getlocation()">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            QuickMeal
+          </a>
+        </div> 
+      
+        <div class="navbar-collapse collapse" id="navbar" aria-expanded="false" style="height: 1px">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="jumbotron">
+          <form class="form-inline">
+            <div class="form-group">
+              <h2 id="search-title">Find the best restaurants around your place</h2>
+              <br/>
+              <input type="text" id="search" class="form-control" data-ng-change="resetCurrentPage()" id="focusedInput" data-ng-model="searchRes" data-ng-init="searchRes = ''" placeholder="Search for restaurants..."/>
+              <a href="#!search/{{searchRes}}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Search
+              </button></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <br/>
+    
+    <div ng-view></div>
+    
+    <br/>
+    
+    
+    <footer class="page-footer font-small blue pt-4 mt-4">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-6">
+            <h4 class="text-left">Connect with us on social media</h4>
+          </div>
+          <div class="col-md-6" id="social">
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-facebook"></a>
+          </div>
+        </div>
+        <hr style="margin-top: 0"/>
+        <div class="row">
+          <div class="col-md-4 col-xs-6">
+            <h5 class="text-uppercase">For Restaurants</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Add Your Restaurant</a>
+              </li>
+              <li>
+                <a href="#!">Blog</a>
+              </li>
+              <li>
+                <a href="#!">Widgets</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-xs-6">
+            <h5 class="text-uppercase">QuickMeal</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">About Us</a>
+              </li>
+              <li>
+                <a href="#!">Terms and Policy</a>
+              </li>
+              <li>
+                <a href="#!">Privacy</a>
+              </li>
+              <li>
+                <a href="#!">Partners</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-xs-12">
+            <h5 class="text-uppercase">Application</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Android</a>
+              </li>
+              <li>
+                <a href="#!">iOS</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr/>
+      </div>
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        <p>Copyright: Hoang Nguyen | COS30043 - Interface Design and Development | 2018</p>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+  </div>
+  
+  <!-- jQuery - required for Bootstrap's JavaScript plugins -->
+  <script src="framework/js/jquery.min.js"></script>
+  <!-- Bootstrap plug-in file -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Bootstrap plug-in file -->
+  <script src="framework/js/angular.min.js"></script>
+  <script src="framework/js/angular-route.js"></script>
+  <script src="framework/js/script.js"></script>
+</body>
+  
+</html>

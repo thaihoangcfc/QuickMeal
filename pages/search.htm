@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="col-md-2" id="filter-bar">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Filter</h4>
+        <hr/>
+        <ul class="list-unstyled" style="text-align: left">
+          <li id="sort-1" data-ng-click="currentsort(1)"><a href="" data-ng-click="sort('Price', false); resetCurrentPage()">Price: Low to High</a></li>
+          <li id="sort-2" data-ng-click="currentsort(2)"><a href="" data-ng-click="sort('Price', true); resetCurrentPage()">Price: High to Low</a></li>
+          <li id="sort-3" data-ng-click="currentsort(3)"><a href="" data-ng-click="sort('Rating', true); resetCurrentPage()">Rating: High to Low</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    
+  <div class="col-md-10">
+        
+    <div class="row" data-ng-repeat="r in restaurants | offset: currentPage*5 | limitTo: 5 | orderBy:'desc'">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>{{r.Name}}</h4></div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="images/restaurants/1.png" alt="laq"/>
+            </div> 
+            <div class="col-md-8">
+              <div class="row">
+                <table class="table" style="border: none;">
+                  <tr>
+                    <th scope="row">Type</th>
+                    <td>{{r.Type}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Location</th>
+                    <td>{{r.Location}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Price for two</th>
+                    <td>${{r.Price}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Rating</th>
+                    <td>{{r.Rating}}/5</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="row">
+                <a href="#!book/{{r.ID}}">
+                  <button type="button" class="btn btn-primary">
+                  <span class="glyphicon glyphicon-calendar"></span> Make a booking
+                  </button>
+                </a>
+              </div>
+            </div> 
+          </div>
+          <br/>            
+        </div>
+      </div>
+    </div>
+    
+    <div class="row" data-ng-show="restaurants.length > 0">
+      <ul class="pagination">
+        <li data-ng-class="prevPageDisabled()">
+          <a href data-ng-click="prevPage()"><<</a>
+        </li>
+        <li data-ng-repeat="r in range()" data-ng-class="{active: r == currentPage}" data-ng-click="setPage(r)">
+          <a href>{{r+1}}</a>
+        </li>
+        <li data-ng-class="nextPageDisabled()">
+          <a href data-ng-click="nextPage()">>></a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="row" data-ng-show="restaurants.length == 0">
+      <div class="col-md-12">
+        <h3 style="color: #C0C0C0;">Sorry, no matched results, the restaurant you are looking for might not be in our database yet</h3>
+        <img src="images/no-result.png" alt="no-result"/>
+      </div>
+    </div>
+      
+  </div>
+</div>

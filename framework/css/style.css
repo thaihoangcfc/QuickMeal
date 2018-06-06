@@ -1,0 +1,227 @@
+body {
+  background-image: url('/images/background.jpg');
+  background-repeat: no-repeat;
+}
+
+.navbar-default .navbar-brand {
+  font-family: Pacifico;
+  font-size: 30px;
+  color: white;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #31b0d5;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle {
+   border-color: white;
+}
+
+.navbar {
+  background-color: #31b0d5;
+  color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+.container {
+  background-color: #F9FAFB;
+}
+
+.row {
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th {
+  border-top: none;
+}
+
+.container {
+  padding: 0px;
+}
+
+.jumbotron {
+  background-image: url('/images/jumbotron.jpg');
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  width: 100%;
+  height: 250px;
+}
+
+#search-title {
+  color: white; 
+  font-weight: lighter;
+  text-shadow: 0px 3px black;
+}
+
+h5 {
+  font-weight: 500;
+}
+
+[id^="button-time-"] {
+  margin-right: 5px;
+}
+
+[id^="booking-time-"] {
+  margin-left: 5px;
+  overflow: auto;
+  white-space: nowrap;
+  float:left;
+  width: calc(100% - 80px);
+  max-width: 100%;
+}
+
+#slider-left {
+  float:left;
+  width: 35px;
+  display: inline-block;
+}
+
+#slider-right {
+  float: right;
+  width: 35px;
+  display: inline-block;
+}
+
+.active {
+  background-color: #31B0D5;
+}
+
+#recommendation img {
+  height: 60%; 
+  margin-bottom: 20px;
+}
+
+#recommendation a {
+  text-decoration: none;
+  color: white;
+}
+
+#recommendation {
+  color: white;
+  text-shadow: 0px 3px black;
+}
+
+#recommendation .jumbotron{
+  margin-bottom: 10px;
+}
+
+#recommendation-1 {
+  background-image: url('/images/recommendation1.jpg');
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+#recommendation-2 {
+  background-image: url('/images/recommendation2.jpg');
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+#recommendation-3 {
+  background-image: url('/images/recommendation3.jpg');
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+#recommendation-4 {
+  background-image: url('/images/recommendation4.jpg');
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+#booking-intro {
+  margin-bottom: 30px;
+}
+
+#booking-intro img {
+  margin-bottom: 15px;
+}
+
+#booking-intro div {
+  margin-bottom: 20px;
+}
+
+/*Footer*/
+footer {
+  background-color: #282C35;
+  color: white;
+  line-height: 1.5em;
+}
+
+footer h4 {
+  margin-top: 20px;
+}
+
+footer li, footer h5 {
+  text-align: left;
+  font-weight: bolder;
+  padding-bottom: 10px;
+}
+
+footer li a, footer li a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-copyright {
+  padding-bottom: 10px;
+}
+
+
+/*Social network button*/
+.fa {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#social a {
+  float:right;
+}
+
+#social a:hover {
+  color:white;
+  text-decoration: none;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+
+/*Styling for sorting options*/
+#filter-bar a:hover, #filter-bar a:visited {
+  text-decoration: none;
+}
